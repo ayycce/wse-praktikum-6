@@ -94,7 +94,6 @@ module.exports = router;
 
 // Route untuk tes error handler
 router.get('/crash/test', (req, res, next) => {
-    // Kita sengaja melempar error baru
     const err = new Error('Tes error sengaja');
-    next(err); // Melempar error ke global error handler
+    next(err);
 });
