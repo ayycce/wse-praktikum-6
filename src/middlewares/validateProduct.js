@@ -5,12 +5,12 @@ module.exports = (req, res, next) => {
     if (!name) {
         errors.push({ field: 'name', message: 'Name is required' });
     }
-    if (price == null) { // '==' null akan menangkap 'null' dan 'undefined'
+    if (price == null) { 
         errors.push({ field: 'price', message: 'Price is required' });
     }
 
     if (errors.length > 0) {
-        // Jika ada error, kirim respons 400 dan jangan lanjutkan
+        
         return res.status(400).json({
             success: false,
             message: 'Validation error',
@@ -18,6 +18,5 @@ module.exports = (req, res, next) => {
         });
     }
 
-    // Jika tidak ada error, lanjut ke fungsi route berikutnya
     next();
 };
