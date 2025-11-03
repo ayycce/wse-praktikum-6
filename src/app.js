@@ -1,9 +1,9 @@
 const express = require('express');
-const morgan = require('morgan'); // Import morgan
+const morgan = require('morgan'); 
 const app = express();
 
 // --- Middlewares ---
-app.use(morgan('dev')); // Gunakan morgan untuk logging
+app.use(morgan('dev')); 
 app.use(express.json());
 
 // --- Routes ---
@@ -20,7 +20,7 @@ app.get('/api/health', (req, res) => {
 const productRoutes = require('./routes/products.routes');
 app.use('/api/products', productRoutes);
 
-// --- Error Handler (HARUS DI PALING BAWAH) ---
+// --- Error Handler ---
 const errorHandler = require('./middlewares/errorHandler');
 app.use(errorHandler);
 
