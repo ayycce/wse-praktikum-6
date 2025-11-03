@@ -1,5 +1,4 @@
 # Abaikan folder dependensi
 /node_modules
 
-# Abaikan file environment (jika ada)
 .env
